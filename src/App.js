@@ -3,7 +3,7 @@ import backgroundXs from "./background-xs.jpg";
 import backgroundSm from "./background-sm.jpg";
 import backgroundMd from "./background-md.jpg";
 import backgroundLg from "./background-lg.jpg";
-import { breakpointSmMin, breakpointMdMin, breakpointLgMin } from './stylesUtils';
+import { breakpointSmMin, breakpointMdMin, breakpointLgMin, bodyTextColor } from './stylesUtils';
 
 function App() {
 
@@ -15,9 +15,9 @@ function App() {
       </Menu>
       <Info>
         <InfoText>I am Jessica Wang, a software engineer and photographer.</InfoText>
-        <Contact><a href="#" target="_blank" rel="noopener noreferrer">Email</a></Contact>
-        <Contact><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></Contact>
-        <Contact><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></Contact>
+        <Contact><ContactLink href="mailto:jssxwang@gmail.com" target="_blank" rel="noopener noreferrer">Email</ContactLink></Contact>
+        <Contact><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></Contact>
+        <Contact><ContactLink href="https://www.instagram.com/jesswang.photo" target="_blank" rel="noopener noreferrer">Instagram</ContactLink></Contact>
       </Info>
     </AppContainer>
   );
@@ -69,6 +69,13 @@ const InfoText = styled.p`
 `;
 const Contact = styled.div`
   line-height: 22px;
+`;
+const ContactLink = styled.a`
+  color: ${bodyTextColor};
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default App;

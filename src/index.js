@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createGlobalStyle } from 'styled-components'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { bodyTextColor } from './stylesUtils';
 
 const CSSReset = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -57,7 +58,7 @@ const CSSReset = createGlobalStyle`
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Quicksand', sans-serif;
-    color: #312725;
+    color: ${bodyTextColor};
   }
 `;
 
