@@ -9,6 +9,12 @@ function App() {
 
   return (
     <AppContainer>
+      <BackgroundPicture>
+        <source media={`(min-width: ${breakpointLgMin}px`} srcSet={backgroundLg} />
+        <source media={`(min-width: ${breakpointMdMin}px`} srcSet={backgroundMd} />
+        <source media={`(min-width: ${breakpointSmMin}px`} srcSet={backgroundSm} />
+        <BackgroundImage src={backgroundXs} alt="" />
+      </BackgroundPicture>
       <Menu>
         <ListItem>about</ListItem>
         <ListItem>photography</ListItem>
@@ -27,18 +33,12 @@ const opacityGradient = 'linear-gradient(rgba(255,255,255, 0.2), rgba(255,255,25
 
 const AppContainer = styled.div`
   font-size: 16px;
-  background: ${opacityGradient}, url(${backgroundXs}) no-repeat left top/cover;
-  height: 100vh;
-
-  @media (min-width: ${breakpointSmMin}px) {
-    background: ${opacityGradient}, url(${backgroundSm}) no-repeat left top/cover;
-  }
-  @media (min-width: ${breakpointMdMin}px) {
-    background: ${opacityGradient}, url(${backgroundMd}) no-repeat left top/cover;
-  }
-  @media (min-width: ${breakpointLgMin}px) {
-    background: ${opacityGradient}, url(${backgroundLg}) no-repeat left top/cover;
-  }
+`;
+const BackgroundPicture = styled.picture`
+  position: fixed;
+`;
+const BackgroundImage = styled.img`
+  width: 100%;
 `;
 const Menu = styled.ul`
   position: absolute;
