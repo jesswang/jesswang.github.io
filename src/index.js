@@ -58,6 +58,7 @@ const CSSReset = createGlobalStyle`
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
     color: ${bodyTextColor};
   }
 `;
