@@ -6,10 +6,10 @@ import {
 } from "react-router-dom";
 import styled from 'styled-components';
 import { Photography } from './Photography';
-import backgroundXs from "./background-xs.jpg";
-import backgroundSm from "./background-sm.jpg";
-import backgroundMd from "./background-md.jpg";
-import backgroundLg from "./background-lg.jpg";
+import backgroundXs from "./assets/background-xs.jpg";
+import backgroundSm from "./assets/background-sm.jpg";
+import backgroundMd from "./assets/background-md.jpg";
+import backgroundLg from "./assets/background-lg.jpg";
 import { breakpointSmMin, breakpointMdMin, breakpointLgMin, bodyTextColor, Menu, MenuListItem, StyledNavLink } from './stylesUtils';
 
 function App() {
@@ -17,16 +17,18 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/photography">
-          <Photography />
+          <ContentWrapper>
+            <Photography />
+          </ContentWrapper>
         </Route>
         <Route path="/">
-          <div>
-            <BackgroundPicture>
+          <ContentWrapper>
+            <picture>
               <source media={`(min-width: ${breakpointLgMin}px`} srcSet={backgroundLg} />
               <source media={`(min-width: ${breakpointMdMin}px`} srcSet={backgroundMd} />
               <source media={`(min-width: ${breakpointSmMin}px`} srcSet={backgroundSm} />
               <BackgroundImage src={backgroundXs} alt="" />
-            </BackgroundPicture>
+            </picture>
             <FixedMenu>
               <MenuListItem><StyledNavLink exact to="/">about</StyledNavLink></MenuListItem>
               <MenuListItem><StyledNavLink to="/photography">photography</StyledNavLink></MenuListItem>
@@ -37,13 +39,21 @@ function App() {
               <Contact><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></Contact>
               <Contact><ContactLink href="https://www.instagram.com/jesswang.photo" target="_blank" rel="noopener noreferrer">Instagram</ContactLink></Contact>
             </Info>
-          </div>
+          </ContentWrapper>
         </Route>
       </Switch>
     </BrowserRouter>
   );
 }
 
+const ContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1600px;
+`;
 const FixedMenu = styled(Menu)`
   position: absolute;
   top: 0;
@@ -53,10 +63,6 @@ const FixedMenu = styled(Menu)`
   @media (min-width: ${breakpointSmMin}px) {
     margin: 40px 64px;
   }
-`;
-const BackgroundPicture = styled.picture`
-  position: fixed;
-  width: 100%;
 `;
 const BackgroundImage = styled.img`
   width: 100%;
@@ -75,7 +81,7 @@ const InfoText = styled.p`
   line-height: 18px;
 `;
 const Contact = styled.div`
-  line-height: 20px;
+  line-height: 22px;
 `;
 const ContactLink = styled.a`
   color: ${bodyTextColor};
