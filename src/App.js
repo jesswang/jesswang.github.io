@@ -2,7 +2,6 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import styled from 'styled-components';
 import { Photography } from './Photography';
@@ -10,23 +9,21 @@ import backgroundXs from "./assets/background-xs.jpg";
 import backgroundSm from "./assets/background-sm.jpg";
 import backgroundMd from "./assets/background-md.jpg";
 import backgroundLg from "./assets/background-lg.jpg";
-import { breakpointSmMin, breakpointMdMin, breakpointLgMin, bodyTextColor, Menu, MenuListItem, StyledNavLink } from './stylesUtils';
+import { breakpointXsMin, breakpointSmMin, breakpointLgMin, bodyTextColor, Menu, MenuListItem, StyledNavLink } from './stylesUtils';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/photography">
-          <ContentWrapper>
-            <Photography />
-          </ContentWrapper>
+          <Photography />
         </Route>
         <Route path="/">
-          <ContentWrapper>
+          <ContentContainer>
             <picture>
               <source media={`(min-width: ${breakpointLgMin}px`} srcSet={backgroundLg} />
-              <source media={`(min-width: ${breakpointMdMin}px`} srcSet={backgroundMd} />
-              <source media={`(min-width: ${breakpointSmMin}px`} srcSet={backgroundSm} />
+              <source media={`(min-width: ${breakpointSmMin}px`} srcSet={backgroundMd} />
+              <source media={`(min-width: ${breakpointXsMin}px`} srcSet={backgroundSm} />
               <BackgroundImage src={backgroundXs} alt="" />
             </picture>
             <FixedMenu>
@@ -39,14 +36,14 @@ function App() {
               <Contact><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></Contact>
               <Contact><ContactLink href="https://www.instagram.com/jesswang.photo" target="_blank" rel="noopener noreferrer">Instagram</ContactLink></Contact>
             </Info>
-          </ContentWrapper>
+          </ContentContainer>
         </Route>
       </Switch>
     </BrowserRouter>
   );
 }
 
-const ContentWrapper = styled.div`
+const ContentContainer = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
@@ -60,7 +57,7 @@ const FixedMenu = styled(Menu)`
   list-style-type: none;
   margin: 32px 20px;
 
-  @media (min-width: ${breakpointSmMin}px) {
+  @media (min-width: ${breakpointXsMin}px) {
     margin: 40px 64px;
   }
 `;
@@ -72,7 +69,7 @@ const Info = styled.div`
   bottom: 0;
   margin: 0 20px 32px;
   
-  @media (min-width: ${breakpointSmMin}px) {
+  @media (min-width: ${breakpointXsMin}px) {
     margin: 64px;
   }
 `;
