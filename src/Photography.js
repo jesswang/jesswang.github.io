@@ -28,6 +28,10 @@ import usImg4 from './assets/us/us-04.jpg';
 import usImg5 from './assets/us/us-05.jpg';
 import usImg6 from './assets/us/us-06.jpg';
 import usImg7 from './assets/us/us-07.jpg';
+import portraitImg1 from './assets/portraits/portrait-01.jpg';
+import portraitImg2 from './assets/portraits/portrait-02.jpg';
+import portraitImg3 from './assets/portraits/portrait-03.jpg';
+import portraitImg4 from './assets/portraits/portrait-04.jpg';
 
 export function Photography() {
   const match = useRouteMatch();
@@ -151,6 +155,20 @@ export function Photography() {
                 <ImgContainer width={1600} height={1061}><Img src={usImg7} alt="Restaurant window in NYC" /></ImgContainer>
                 <Caption>Manhattan, February 2020</Caption>
               </PhotoContainer>
+            </Route>
+            <Route path={`${match.path}/portraits`}>
+              <PortraitPhotoContainer>
+                <ImgContainer width={1024} height={1545}><Img src={portraitImg1} alt="" /></ImgContainer>
+              </PortraitPhotoContainer>
+              <PhotoContainer>
+                <ImgContainer width={1545} height={1024}><Img src={portraitImg2} alt="" /></ImgContainer>
+              </PhotoContainer>
+              <PortraitPhotoContainer>
+                <ImgContainer width={1061} height={1600}><Img src={portraitImg3} alt="" /></ImgContainer>
+              </PortraitPhotoContainer>
+              <PortraitPhotoContainer>
+                <ImgContainer width={1061} height={1600}><Img src={portraitImg4} alt="" /></ImgContainer>
+              </PortraitPhotoContainer>
             </Route>
           </Switch>
         </PhotosContainer>
