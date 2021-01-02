@@ -2,9 +2,9 @@ import {
   Switch,
   Route,
   useRouteMatch
-} from "react-router-dom";
+} from 'react-router-dom';
 import styled from 'styled-components';
-import { Menu, MenuListItem, StyledNavLink } from './stylesUtils';
+import { StyledNavLink } from './stylesUtils';
 import icelandImg1 from './assets/iceland/iceland-01.jpg';
 import icelandImg2 from './assets/iceland/iceland-02.jpg';
 import icelandImg3 from './assets/iceland/iceland-03.jpg';
@@ -34,14 +34,10 @@ import portraitImg3 from './assets/portraits/portrait-03.jpg';
 import portraitImg4 from './assets/portraits/portrait-04.jpg';
 
 export function Photography() {
-  const match = useRouteMatch();
+  let match = useRouteMatch();
 
   return (
     <ContentContainer>
-      <Menu>
-        <MenuListItem><StyledNavLink exact to="/">about</StyledNavLink></MenuListItem>
-        <MenuListItem><StyledNavLink to="/photography" selected>photography</StyledNavLink></MenuListItem>
-      </Menu>
       <Content>
         <div>
           <List>
@@ -179,7 +175,7 @@ export function Photography() {
 
 const ContentContainer = styled.div`
   max-width: 1600px;
-  margin: auto;
+  margin: 120px auto 0;
 `;
 const List = styled.ul`
   list-style-type: none;
