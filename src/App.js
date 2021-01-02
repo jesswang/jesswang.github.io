@@ -1,5 +1,5 @@
 import {
-  BrowserRouter,
+  HashRouter,
   Switch,
   Route,
 } from "react-router-dom";
@@ -13,7 +13,7 @@ import { breakpointXsMin, breakpointSmMin, breakpointLgMin, bodyTextColor, Menu,
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path="/photography">
           <Photography />
@@ -39,7 +39,7 @@ function App() {
           </ContentContainer>
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
