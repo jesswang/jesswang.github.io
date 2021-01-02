@@ -45,129 +45,129 @@ export function Photography() {
       <Content>
         <div>
           <List>
-            <li><StyledNavLink to={`${match.url}/iceland`}>Iceland</StyledNavLink></li>
-            <li><StyledNavLink to={`${match.url}/japan`}>Japan</StyledNavLink></li>
-            <li><StyledNavLink to={`${match.url}/norway`}>Norway</StyledNavLink></li>
-            <li><StyledNavLink to={`${match.url}/us`}>U.S.</StyledNavLink></li>
+            <li><StyledNavLink to={`${match.url}/iceland`}>iceland</StyledNavLink></li>
+            <li><StyledNavLink to={`${match.url}/japan`}>japan</StyledNavLink></li>
+            <li><StyledNavLink to={`${match.url}/norway`}>norway</StyledNavLink></li>
+            <li><StyledNavLink to={`${match.url}/us`}>u.s.</StyledNavLink></li>
           </List>
           <List style={{ marginTop: '20px' }}>
-            <li><StyledNavLink to={`${match.url}/portraits`}>Portraits</StyledNavLink></li>
+            <li><StyledNavLink to={`${match.url}/portraits`}>portraits</StyledNavLink></li>
           </List>
         </div>
         <PhotosContainer>
           <Switch>
             <Route path={`${match.path}/iceland`}>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={icelandImg1} alt="View of Stykkishólmur" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={icelandImg1} key={icelandImg1} alt="View of Stykkishólmur" /></ImgContainer>
                 <Caption>Stykkishólmur, March 2019</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1091}><Img src={icelandImg2} alt="Horses grazing" /></ImgContainer>
+                <ImgContainer width={1600} height={1091}><Img src={icelandImg2} key={icelandImg2} alt="Horses grazing" /></ImgContainer>
                 <Caption>Vík, March 2019</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={icelandImg3} alt="Black church of Búðir" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={icelandImg3} key={icelandImg3} alt="Black church of Búðir" /></ImgContainer>
                 <Caption>Búðir, March 2019</Caption>
               </PhotoContainer>
               <PortraitPhotoContainer>
-                <ImgContainer width={704} height={1061}><Img src={icelandImg4} alt="Skógafoss waterfall" /></ImgContainer>
+                <ImgContainer width={704} height={1061}><Img src={icelandImg4} key={icelandImg4} alt="Skógafoss waterfall" /></ImgContainer>
                 <Caption>Skógafoss, March 2019</Caption>
               </PortraitPhotoContainer>
               <PortraitPhotoContainer>
-                <ImgContainer width={1061} height={1600}><Img src={icelandImg5} alt="Gljúfrabúi waterfall" /></ImgContainer>
+                <ImgContainer width={1061} height={1600}><Img src={icelandImg5} key={icelandImg5} alt="Gljúfrabúi waterfall" /></ImgContainer>
                 <Caption>Gljúfrabúi, March 2019</Caption>
               </PortraitPhotoContainer>
             </Route>
             <Route path={`${match.path}/japan`}>
             <PhotoContainer>
-                <ImgContainer width={1600} height={1060}><Img src={japanImg1} alt="Biker in Osaka" /></ImgContainer>
+                <ImgContainer width={1600} height={1060}><Img src={japanImg1} key={japanImg1} alt="Biker in Osaka" /></ImgContainer>
                 <Caption>Osaka, January 2018</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1060}><Img src={japanImg2} alt="Guests feeding monkeys at Iwatayama Monkey Park" /></ImgContainer>
+                <ImgContainer width={1600} height={1060}><Img src={japanImg2} key={japanImg2} alt="Guests feeding monkeys at Iwatayama Monkey Park" /></ImgContainer>
                 <Caption>Arashiyama, January 2018</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1081}><Img src={japanImg3} alt="Visitors at Sensō-ji temple" /></ImgContainer>
+                <ImgContainer width={1600} height={1081}><Img src={japanImg3} key={japanImg3} alt="Visitors at Sensō-ji temple" /></ImgContainer>
                 <Caption>Asakusa, December 2015</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1081}><Img src={japanImg4} alt="Tsukiji fish market" /></ImgContainer>
+                <ImgContainer width={1600} height={1081}><Img src={japanImg4} key={japanImg4} alt="Tsukiji fish market" /></ImgContainer>
                 <Caption>Tsukiji, December 2015</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1081}><Img src={japanImg5} alt="Man with poodle and shopper at Tsukiji fish market" /></ImgContainer>
+                <ImgContainer width={1600} height={1081}><Img src={japanImg5} key={japanImg5} alt="Man with poodle and shopper at Tsukiji fish market" /></ImgContainer>
                 <Caption>Tsukiji, December 2015</Caption>
               </PhotoContainer>
             </Route>
             <Route path={`${match.path}/norway`}>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={norwayImg1} alt="Munkebu hut in Lofoten" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={norwayImg1} key={norwayImg1} alt="Munkebu hut in Lofoten" /></ImgContainer>
                 <Caption>Reine, August 2019</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={norwayImg2} alt="House in grass in Vindstad" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={norwayImg2} key={norwayImg2} alt="House in grass in Vindstad" /></ImgContainer>
                 <Caption>Vindstad, August 2019</Caption>
               </PhotoContainer>
               <PortraitPhotoContainer>
-                <ImgContainer width={1061} height={1600}><Img src={norwayImg3} alt="Village of Å in Lofoten" /></ImgContainer>
+                <ImgContainer width={1061} height={1600}><Img src={norwayImg3} key={norwayImg3} alt="Village of Å in Lofoten" /></ImgContainer>
                 <Caption>Å, August 2019</Caption>
               </PortraitPhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={norwayImg4} alt="Lake along Ryten trail in Lofoten" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={norwayImg4} key={norwayImg4} alt="Lake along Ryten trail in Lofoten" /></ImgContainer>
                 <Caption>Ryten, August 2019</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={norwayImg5} alt="Cliff overlooking beach at Ryten in Lofoten" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={norwayImg5} key={norwayImg5} alt="Cliff overlooking beach at Ryten in Lofoten" /></ImgContainer>
                 <Caption>Ryten, August 2019</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={norwayImg6} alt="House in Reine" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={norwayImg6} key={norwayImg6} alt="House in Reine" /></ImgContainer>
                 <Caption>Reine, August 2019</Caption>
               </PhotoContainer>
             </Route>
             <Route path={`${match.path}/us`}>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={usImg1} alt="Fog covering the ocean at Big Sur" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={usImg1} key={usImg1} alt="Fog covering the ocean at Big Sur" /></ImgContainer>
                 <Caption>Big Sur, May 2018</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={usImg2} alt="Tourists at Badwater Basin in Death Valley National Park" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={usImg2} key={usImg2} alt="Tourists at Badwater Basin in Death Valley National Park" /></ImgContainer>
                 <Caption>Death Valley, March 2016</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1081}><Img src={usImg3} alt="Street art in Astoria, Queens" /></ImgContainer>
+                <ImgContainer width={1600} height={1081}><Img src={usImg3} key={usImg3} alt="Street art in Astoria, Queens" /></ImgContainer>
                 <Caption>Astoria, June 2016</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={usImg4} alt="Franconia Ridge Loop" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={usImg4} key={usImg4} alt="Franconia Ridge Loop" /></ImgContainer>
                 <Caption>Mount Lafayette, October 2020</Caption>
               </PhotoContainer>
               <PortraitPhotoContainer>
-                <ImgContainer width={1061} height={1600}><Img src={usImg5} alt="Duke University commencement" /></ImgContainer>
+                <ImgContainer width={1061} height={1600}><Img src={usImg5} key={usImg5} alt="Duke University commencement" /></ImgContainer>
                 <Caption>Duke University, May 2019</Caption>
               </PortraitPhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={usImg6} alt="Restaurant guests in San Diego" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={usImg6} key={usImg6} alt="Restaurant guests in San Diego" /></ImgContainer>
                 <Caption>San Diego, April 2016</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={usImg7} alt="Restaurant window in NYC" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={usImg7} key={usImg7} alt="Restaurant window in NYC" /></ImgContainer>
                 <Caption>Manhattan, February 2020</Caption>
               </PhotoContainer>
             </Route>
             <Route path={`${match.path}/portraits`}>
               <PortraitPhotoContainer>
-                <ImgContainer width={1024} height={1545}><Img src={portraitImg1} alt="" /></ImgContainer>
+                <ImgContainer width={1024} height={1545}><Img src={portraitImg1} key={portraitImg1} alt="" /></ImgContainer>
               </PortraitPhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1545} height={1024}><Img src={portraitImg2} alt="" /></ImgContainer>
+                <ImgContainer width={1545} height={1024}><Img src={portraitImg2} key={portraitImg2} alt="" /></ImgContainer>
               </PhotoContainer>
               <PortraitPhotoContainer>
-                <ImgContainer width={1061} height={1600}><Img src={portraitImg3} alt="" /></ImgContainer>
+                <ImgContainer width={1061} height={1600}><Img src={portraitImg3} key={portraitImg3} alt="" /></ImgContainer>
               </PortraitPhotoContainer>
               <PortraitPhotoContainer>
-                <ImgContainer width={1061} height={1600}><Img src={portraitImg4} alt="" /></ImgContainer>
+                <ImgContainer width={1061} height={1600}><Img src={portraitImg4} key={portraitImg4} alt="" /></ImgContainer>
               </PortraitPhotoContainer>
             </Route>
           </Switch>
