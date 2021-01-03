@@ -4,7 +4,8 @@ import {
   useRouteMatch
 } from 'react-router-dom';
 import styled from 'styled-components';
-import { StyledNavLink } from './stylesUtils';
+import { useMobileBreakpoint } from './useMobileBreakpoint';
+import { StyledNavLink, breakpointMdMin, breakpointLgMin } from './stylesUtils';
 import icelandImg1 from './assets/iceland/iceland-01.jpg';
 import icelandImg2 from './assets/iceland/iceland-02.jpg';
 import icelandImg3 from './assets/iceland/iceland-03.jpg';
@@ -35,21 +36,24 @@ import portraitImg4 from './assets/portraits/portrait-04.jpg';
 
 export function Photography() {
   let match = useRouteMatch();
+  const isMobile = useMobileBreakpoint();
 
   return (
     <ContentContainer>
       <Content>
-        <div>
-          <List>
-            <li><StyledNavLink to={`${match.url}/iceland`}>iceland</StyledNavLink></li>
-            <li><StyledNavLink to={`${match.url}/japan`}>japan</StyledNavLink></li>
-            <li><StyledNavLink to={`${match.url}/norway`}>norway</StyledNavLink></li>
-            <li><StyledNavLink to={`${match.url}/us`}>u.s.</StyledNavLink></li>
-          </List>
-          <List style={{ marginTop: '20px' }}>
-            <li><StyledNavLink to={`${match.url}/portraits`}>portraits</StyledNavLink></li>
-          </List>
-        </div>
+        {!isMobile && (
+          <div>
+            <List>
+              <li><StyledNavLink to={`${match.url}/iceland`}>iceland</StyledNavLink></li>
+              <li><StyledNavLink to={`${match.url}/japan`}>japan</StyledNavLink></li>
+              <li><StyledNavLink to={`${match.url}/norway`}>norway</StyledNavLink></li>
+              <li><StyledNavLink to={`${match.url}/us`}>u.s.</StyledNavLink></li>
+            </List>
+            <List style={{ marginTop: '20px' }}>
+              <li><StyledNavLink to={`${match.url}/portraits`}>portraits</StyledNavLink></li>
+            </List>
+          </div>
+        )}
         <PhotosContainer>
           <Switch>
             <Route path={`${match.path}/iceland`}>
@@ -175,7 +179,11 @@ export function Photography() {
 
 const ContentContainer = styled.div`
   max-width: 1600px;
-  margin: 120px auto 0;
+  margin: 90px auto 0;
+
+  @media (min-width: ${breakpointMdMin}px) {
+    margin: 120px auto 0;
+  }
 `;
 const List = styled.ul`
   list-style-type: none;
@@ -187,15 +195,30 @@ const Content = styled.div`
 `;
 const PhotosContainer = styled.div`
   width: 100%;
-  margin: 0 180px 16px;
+  margin: 0 20px 16px;
   font-family: 'Roboto', sans-serif;
+
+  @media (min-width: ${breakpointMdMin}px) {
+    margin: 0 100px 16px;
+  }
+  @media (min-width: ${breakpointLgMin}px) {
+    margin: 0 180px 16px;
+  }
 `;
 const PhotoContainer = styled.div`
-  margin-bottom: 48px;
+  margin-bottom: 20px;
+
+  @media (min-width: ${breakpointMdMin}px) {
+    margin-bottom: 48px;
+  }
 `;
 const PortraitPhotoContainer = styled.div`
   max-width: 500px;
-  margin: 0 auto 48px;
+  margin: 0 auto 20px;
+
+  @media (min-width: ${breakpointMdMin}px) {
+    margin: 0 auto 48px;
+  }
 `;
 const ImgContainer = styled.div`
   position: relative;

@@ -1,13 +1,14 @@
 import { 
   useState,
   useEffect,
-  useMemo,
 } from 'react';
 import {
   Switch,
   Route,
+  useLocation,
 } from 'react-router-dom';
 import styled from 'styled-components';
+import { useMobileBreakpoint } from './useMobileBreakpoint';
 import { Photography } from './Photography';
 import backgroundXs from './assets/background-xs.jpg';
 import backgroundSm from './assets/background-sm.jpg';
@@ -23,28 +24,42 @@ import {
 } from './stylesUtils';
 
 function Nav() {
-  const mediaQuery = useMemo(() => window.matchMedia(`(min-width: ${breakpointMdMin}px)`), []);
-  const [isMobile, setIsMobile] = useState(!mediaQuery.matches);
+  let location = useLocation();
+  const isMobile = useMobileBreakpoint();
+  const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
 
   useEffect(() => {
-    mediaQuery.addEventListener('change', handleMediaQuery);
+    setIsSidePanelOpen(false);
+  }, [location]);
 
-    return () => mediaQuery.removeEventListener('change', handleMediaQuery);
-  }, [mediaQuery]);
-
-  const handleMediaQuery = (e) => {
-    e.matches ? setIsMobile(false) : setIsMobile(true);
-  };
-  
   if (isMobile) {
     return (
-      <HamburgerMenu>
-        <svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <>
+        <HamburgerMenu onClick={() => setIsSidePanelOpen(true)} width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 9C9 9 17 9 25 9" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M1 1C9 1 17 1 25 1" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M1 17C9 17 17 17 25 17" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </HamburgerMenu>
+        </HamburgerMenu>
+        <SidePanel open={isSidePanelOpen}>
+          <Close onClick={() => setIsSidePanelOpen(false)} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 17C6.23824 11.6851 11.4765 6.37022 16.7147 1.05532" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M1.28526 1C6.52351 6.31489 11.7618 11.6298 17 16.9447" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          </Close>
+          <SidePanelList>
+            <li style={{ marginBottom: '20px' }}><StyledNavLink exact to="/">about</StyledNavLink></li>
+            <li>
+              photography
+              <SidePanelInnerList>
+                <li><StyledNavLink to="/photography/iceland">iceland</StyledNavLink></li>
+                <li><StyledNavLink to="/photography/japan">japan</StyledNavLink></li>
+                <li><StyledNavLink to="/photography/norway">norway</StyledNavLink></li>
+                <li><StyledNavLink to="/photography/us">u.s.</StyledNavLink></li>
+                <li><StyledNavLink to="/photography/portraits">portraits</StyledNavLink></li>
+              </SidePanelInnerList>
+            </li>
+          </SidePanelList>
+        </SidePanel>
+      </>
     );
   }
   return (
@@ -92,11 +107,39 @@ const ContentContainer = styled.div`
   transform: translateX(-50%);
   max-width: 1600px;
 `;
-const HamburgerMenu = styled.div`
+const HamburgerMenu = styled.svg`
   position: absolute;
   z-index: 1;
-  top: 40px;
-  right: 32px;
+  top: 32px;
+  right: 20px;
+  cursor: pointer;
+`;
+const SidePanel = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999998;
+  width: 320px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+  transform: ${props => props.open ? 'translate(0, 0)' : 'translate(350px, 0)'};
+`;
+const Close = styled.svg`
+  margin: 32px 20px 48px;
+  cursor: pointer;
+`;
+const SidePanelList = styled.ul`
+  list-style-type: none;
+  margin-left: 80px;
+`;
+const SidePanelInnerList = styled.ul`
+  margin: 20px 0 0 24px;
+  
+  li {
+    margin-bottom: 8px;
+  }
 `;
 const FixedNav = styled.ul`
   position: absolute;
@@ -121,7 +164,7 @@ const Info = styled.div`
   bottom: 0;
   margin: 0 20px 32px;
   
-  @media (min-width: ${breakpointSmMin}px) {
+  @media (min-width: ${breakpointMdMin}px) {
     margin: 64px;
   }
 `;
