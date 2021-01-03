@@ -64,8 +64,10 @@ function Nav() {
   }
   return (
     <FixedNav>
-      <NavListItem><StyledNavLink exact to="/">about</StyledNavLink></NavListItem>
-      <NavListItem><StyledNavLink to="/photography">photography</StyledNavLink></NavListItem>
+      <NavList>
+        <NavListItem><StyledNavLink exact to="/">about</StyledNavLink></NavListItem>
+        <NavListItem><StyledNavLink to="/photography">photography</StyledNavLink></NavListItem>
+      </NavList>
     </FixedNav>
   );
 }
@@ -123,7 +125,7 @@ const SidePanel = styled.div`
   height: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
+  transition: transform 300ms ease-out;
   transform: ${props => props.open ? 'translate(0, 0)' : 'translate(350px, 0)'};
 `;
 const Close = styled.svg`
@@ -138,6 +140,7 @@ const SidePanelInnerList = styled.ul`
   margin: 20px 0 0 24px;
 
   li {
+    line-height: 22px;
     margin-bottom: 8px;
   }
 `;
@@ -150,6 +153,8 @@ const FixedNav = styled.ul`
   left: 50%;
   transform: translateX(-50%);
   list-style-type: none;
+`;
+const NavList = styled.ul`
   margin: 40px 64px;
 `;
 const NavListItem = styled.li`
