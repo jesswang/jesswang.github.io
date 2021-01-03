@@ -46,7 +46,7 @@ function Nav() {
             <path d="M1.28526 1C6.52351 6.31489 11.7618 11.6298 17 16.9447" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           </Close>
           <SidePanelList>
-            <li style={{ marginBottom: '20px' }}><StyledNavLink exact to="/">about</StyledNavLink></li>
+            <li style={{ marginBottom: '24px' }}><StyledNavLink exact to="/">about</StyledNavLink></li>
             <li>
               photography
               <SidePanelInnerList>
@@ -137,7 +137,7 @@ const SidePanelList = styled.ul`
   margin-left: 80px;
 `;
 const SidePanelInnerList = styled.ul`
-  margin: 20px 0 0 24px;
+  margin: 24px 0 0 24px;
 
   li {
     line-height: 22px;

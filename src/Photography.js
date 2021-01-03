@@ -58,21 +58,21 @@ export function Photography() {
           <Switch>
             <Route path={`${match.path}/iceland`}>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={icelandImg1} key={icelandImg1} alt="View of Stykkishólmur" /></ImgContainer>
-                <Caption>Stykkishólmur, March 2019</Caption>
-              </PhotoContainer>
-              <PhotoContainer>
-                <ImgContainer width={1600} height={1091}><Img src={icelandImg2} key={icelandImg2} alt="Horses grazing" /></ImgContainer>
+                <ImgContainer width={1600} height={1091}><Img src={icelandImg1} key={icelandImg1} alt="Horses grazing" /></ImgContainer>
                 <Caption>Vík, March 2019</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1061}><Img src={icelandImg3} key={icelandImg3} alt="Black church of Búðir" /></ImgContainer>
+                <ImgContainer width={1600} height={1061}><Img src={icelandImg2} key={icelandImg2} alt="Black church of Búðir" /></ImgContainer>
                 <Caption>Búðir, March 2019</Caption>
               </PhotoContainer>
               <PortraitPhotoContainer>
-                <ImgContainer width={704} height={1061}><Img src={icelandImg4} key={icelandImg4} alt="Skógafoss waterfall" /></ImgContainer>
+                <ImgContainer width={704} height={1061}><Img src={icelandImg3} key={icelandImg3} alt="Skógafoss waterfall" /></ImgContainer>
                 <Caption>Skógafoss, March 2019</Caption>
               </PortraitPhotoContainer>
+              <PhotoContainer>
+                <ImgContainer width={1600} height={1061}><Img src={icelandImg4} key={icelandImg4} alt="View of Stykkishólmur" /></ImgContainer>
+                <Caption>Stykkishólmur, March 2019</Caption>
+              </PhotoContainer>
               <PortraitPhotoContainer>
                 <ImgContainer width={1061} height={1600}><Img src={icelandImg5} key={icelandImg5} alt="Gljúfrabúi waterfall" /></ImgContainer>
                 <Caption>Gljúfrabúi, March 2019</Caption>
