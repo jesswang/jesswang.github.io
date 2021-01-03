@@ -35,13 +35,13 @@ function Nav() {
   if (isMobile) {
     return (
       <>
-        <HamburgerMenu onClick={() => setIsSidePanelOpen(true)} width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <HamburgerMenu onClick={() => setIsSidePanelOpen(true)} aria-label="Menu" width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 9C9 9 17 9 25 9" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M1 1C9 1 17 1 25 1" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M1 17C9 17 17 17 25 17" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
         </HamburgerMenu>
         <SidePanel open={isSidePanelOpen}>
-          <Close onClick={() => setIsSidePanelOpen(false)} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Close onClick={() => setIsSidePanelOpen(false)} aria-label="Close" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 17C6.23824 11.6851 11.4765 6.37022 16.7147 1.05532" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M1.28526 1C6.52351 6.31489 11.7618 11.6298 17 16.9447" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           </Close>
@@ -136,7 +136,7 @@ const SidePanelList = styled.ul`
 `;
 const SidePanelInnerList = styled.ul`
   margin: 20px 0 0 24px;
-  
+
   li {
     margin-bottom: 8px;
   }
