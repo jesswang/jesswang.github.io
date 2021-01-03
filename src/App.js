@@ -1,3 +1,8 @@
+import { 
+  useState,
+  useEffect,
+  useMemo,
+} from 'react';
 import {
   Switch,
   Route,
@@ -8,15 +13,52 @@ import backgroundXs from './assets/background-xs.jpg';
 import backgroundSm from './assets/background-sm.jpg';
 import backgroundMd from './assets/background-md.jpg';
 import backgroundLg from './assets/background-lg.jpg';
-import { breakpointXsMin, breakpointSmMin, breakpointLgMin, bodyTextColor, Menu, MenuListItem, StyledNavLink } from './stylesUtils';
+import { 
+  breakpointXsMin,
+  breakpointSmMin,
+  breakpointMdMin,
+  breakpointLgMin,
+  bodyTextColor,
+  StyledNavLink,
+} from './stylesUtils';
+
+function Nav() {
+  const mediaQuery = useMemo(() => window.matchMedia(`(min-width: ${breakpointMdMin}px)`), []);
+  const [isMobile, setIsMobile] = useState(!mediaQuery.matches);
+
+  useEffect(() => {
+    mediaQuery.addEventListener('change', handleMediaQuery);
+
+    return () => mediaQuery.removeEventListener('change', handleMediaQuery);
+  }, [mediaQuery]);
+
+  const handleMediaQuery = (e) => {
+    e.matches ? setIsMobile(false) : setIsMobile(true);
+  };
+  
+  if (isMobile) {
+    return (
+      <HamburgerMenu>
+        <svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 9C9 9 17 9 25 9" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M1 1C9 1 17 1 25 1" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M1 17C9 17 17 17 25 17" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </HamburgerMenu>
+    );
+  }
+  return (
+    <FixedNav>
+      <NavListItem><StyledNavLink exact to="/">about</StyledNavLink></NavListItem>
+      <NavListItem><StyledNavLink to="/photography">photography</StyledNavLink></NavListItem>
+    </FixedNav>
+  );
+}
 
 function App() {
   return (
     <>
-      <FixedMenu>
-        <MenuListItem><StyledNavLink exact to="/">about</StyledNavLink></MenuListItem>
-        <MenuListItem><StyledNavLink to="/photography">photography</StyledNavLink></MenuListItem>
-      </FixedMenu>
+      <Nav />
       <Switch>
         <Route path="/photography">
           <Photography />
@@ -50,7 +92,13 @@ const ContentContainer = styled.div`
   transform: translateX(-50%);
   max-width: 1600px;
 `;
-const FixedMenu = styled(Menu)`
+const HamburgerMenu = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  right: 32px;
+`;
+const FixedNav = styled.ul`
   position: absolute;
   top: 0;
   z-index: 1;
@@ -61,6 +109,10 @@ const FixedMenu = styled(Menu)`
   list-style-type: none;
   margin: 40px 64px;
 `;
+const NavListItem = styled.li`
+  display: inline-flex;
+  margin-right: 42px;
+`;
 const BackgroundImage = styled.img`
   width: 100%;
 `;
@@ -69,7 +121,7 @@ const Info = styled.div`
   bottom: 0;
   margin: 0 20px 32px;
   
-  @media (min-width: ${breakpointXsMin}px) {
+  @media (min-width: ${breakpointSmMin}px) {
     margin: 64px;
   }
 `;
