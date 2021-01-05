@@ -197,6 +197,8 @@ const PhotosContainer = styled.div`
   width: 100%;
   margin: 0 20px 16px;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300; 
+  font-style: italic;
 
   @media (min-width: ${breakpointMdMin}px) {
     margin: 0 100px 16px;

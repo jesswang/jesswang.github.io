@@ -36,14 +36,14 @@ function Nav() {
     return (
       <>
         <HamburgerMenu onClick={() => setIsSidePanelOpen(true)} aria-label="Menu" width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 9C9 9 17 9 25 9" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M1 1C9 1 17 1 25 1" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M1 17C9 17 17 17 25 17" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M1 9C9 9 17 9 25 9" stroke="#312725" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M1 1C9 1 17 1 25 1" stroke="#312725" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M1 17C9 17 17 17 25 17" stroke="#312725" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
         </HamburgerMenu>
         <SidePanel open={isSidePanelOpen}>
           <Close onClick={() => setIsSidePanelOpen(false)} aria-label="Close" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 17C6.23824 11.6851 11.4765 6.37022 16.7147 1.05532" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M1.28526 1C6.52351 6.31489 11.7618 11.6298 17 16.9447" stroke="#3A2E2B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M1 17C6.23824 11.6851 11.4765 6.37022 16.7147 1.05532" stroke="#312725" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M1.28526 1C6.52351 6.31489 11.7618 11.6298 17 16.9447" stroke="#312725" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           </Close>
           <SidePanelList>
             <li style={{ marginBottom: '24px' }}><StyledNavLink exact to="/">about</StyledNavLink></li>
@@ -83,9 +83,9 @@ function App() {
         <Route path="/">
           <ContentContainer>
             <picture>
-              <source media={`(min-width: ${breakpointLgMin}px`} srcSet={backgroundLg} />
-              <source media={`(min-width: ${breakpointSmMin}px`} srcSet={backgroundMd} />
-              <source media={`(min-width: ${breakpointXsMin}px`} srcSet={backgroundSm} />
+              <source media={`(min-width: ${breakpointLgMin}px)`} srcSet={backgroundLg} />
+              <source media={`(min-width: ${breakpointSmMin}px)`} srcSet={backgroundMd} />
+              <source media={`(min-width: ${breakpointXsMin}px)`} srcSet={backgroundSm} />
               <BackgroundImage src={backgroundXs} alt="" />
             </picture>
             <Info>
@@ -123,6 +123,7 @@ const SidePanel = styled.div`
   z-index: 999998;
   width: 320px;
   height: 100%;
+  overflow-y: scroll;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   transition: transform 300ms ease-out;
