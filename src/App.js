@@ -18,7 +18,6 @@ import {
   breakpointXsMin,
   breakpointSmMin,
   breakpointMdMin,
-  breakpointLgMin,
   bodyTextColor,
   StyledNavLink,
 } from './stylesUtils';
@@ -81,33 +80,40 @@ function App() {
           <Photography />
         </Route>
         <Route path="/">
-          <ContentContainer>
-            <picture>
-              <source media={`(min-width: ${breakpointLgMin}px)`} srcSet={backgroundLg} />
-              <source media={`(min-width: ${breakpointSmMin}px)`} srcSet={backgroundMd} />
-              <source media={`(min-width: ${breakpointXsMin}px)`} srcSet={backgroundSm} />
-              <BackgroundImage src={backgroundXs} alt="" />
-            </picture>
+          <Background>
             <Info>
               <InfoText>I am Jessica Wang, a software engineer and photographer.</InfoText>
               <Contact><ContactLink href="mailto:jssxwang@gmail.com" target="_blank" rel="noopener noreferrer">email</ContactLink></Contact>
               <Contact><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></Contact>
               <Contact><ContactLink href="https://www.instagram.com/jesswang.photo" target="_blank" rel="noopener noreferrer">Instagram</ContactLink></Contact>
             </Info>
-          </ContentContainer>
+          </Background>
         </Route>
       </Switch>
     </>
   );
 }
 
-const ContentContainer = styled.div`
+const Background = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   max-width: 1600px;
+  background-image: url(${backgroundXs});
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: ${breakpointXsMin}px) {
+    background-image: url(${backgroundSm});
+  }
+  @media (min-width: ${breakpointSmMin}px) {
+    background-image: url(${backgroundMd});
+  }
+  @media (min-width: ${breakpointMdMin}px) {
+    background-image: url(${backgroundLg});
+  }
 `;
 const HamburgerMenu = styled.svg`
   position: absolute;
