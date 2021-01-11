@@ -54,9 +54,9 @@ export function Photography() {
             </List>
           </div>
         )}
-        <PhotosContainer>
-          <Switch>
-            <Route path={`${match.path}/iceland`}>
+        <Switch>
+          <Route path={`${match.path}/iceland`}>
+            <PhotosContainer>
               <PhotoContainer>
                 <ImgContainer width={1600} height={1091}><Img src={icelandImg1} key={icelandImg1} alt="Horses grazing" /></ImgContainer>
                 <Caption>Vík, March 2019</Caption>
@@ -77,9 +77,11 @@ export function Photography() {
                 <ImgContainer width={1061} height={1600}><Img src={icelandImg5} key={icelandImg5} alt="Gljúfrabúi waterfall" /></ImgContainer>
                 <Caption>Gljúfrabúi, March 2019</Caption>
               </PortraitPhotoContainer>
-            </Route>
-            <Route path={`${match.path}/japan`}>
-            <PhotoContainer>
+            </PhotosContainer>
+          </Route>
+          <Route path={`${match.path}/japan`}>
+            <PhotosContainer>
+              <PhotoContainer>
                 <ImgContainer width={1600} height={1060}><Img src={japanImg1} key={japanImg1} alt="Biker in Osaka" /></ImgContainer>
                 <Caption>Osaka, January 2018</Caption>
               </PhotoContainer>
@@ -99,8 +101,10 @@ export function Photography() {
                 <ImgContainer width={1600} height={1081}><Img src={japanImg5} key={japanImg5} alt="Man with poodle and shopper at Tsukiji fish market" /></ImgContainer>
                 <Caption>Tsukiji, December 2015</Caption>
               </PhotoContainer>
-            </Route>
-            <Route path={`${match.path}/norway`}>
+            </PhotosContainer>
+          </Route>
+          <Route path={`${match.path}/norway`}>
+            <PhotosContainer>
               <PhotoContainer>
                 <ImgContainer width={1600} height={1061}><Img src={norwayImg1} key={norwayImg1} alt="Munkebu hut in Lofoten" /></ImgContainer>
                 <Caption>Reine, August 2019</Caption>
@@ -125,8 +129,10 @@ export function Photography() {
                 <ImgContainer width={1600} height={1061}><Img src={norwayImg6} key={norwayImg6} alt="House in Reine" /></ImgContainer>
                 <Caption>Reine, August 2019</Caption>
               </PhotoContainer>
-            </Route>
-            <Route path={`${match.path}/us`}>
+            </PhotosContainer>
+          </Route>
+          <Route path={`${match.path}/us`}>
+            <PhotosContainer>
               <PhotoContainer>
                 <ImgContainer width={1600} height={1061}><Img src={usImg1} key={usImg1} alt="Fog covering the ocean at Big Sur" /></ImgContainer>
                 <Caption>Big Sur, May 2018</Caption>
@@ -155,8 +161,10 @@ export function Photography() {
                 <ImgContainer width={1600} height={1061}><Img src={usImg7} key={usImg7} alt="Restaurant window in NYC" /></ImgContainer>
                 <Caption>Manhattan, February 2020</Caption>
               </PhotoContainer>
-            </Route>
-            <Route path={`${match.path}/portraits`}>
+            </PhotosContainer>
+          </Route>
+          <Route path={`${match.path}/portraits`}>
+            <PhotosContainer>
               <PortraitPhotoContainer>
                 <ImgContainer width={1024} height={1545}><Img src={portraitImg1} key={portraitImg1} alt="" /></ImgContainer>
               </PortraitPhotoContainer>
@@ -169,9 +177,14 @@ export function Photography() {
               <PortraitPhotoContainer>
                 <ImgContainer width={1061} height={1600}><Img src={portraitImg4} key={portraitImg4} alt="" /></ImgContainer>
               </PortraitPhotoContainer>
-            </Route>
-          </Switch>
-        </PhotosContainer>
+            </PhotosContainer>
+          </Route>
+          <Route path={`${match.path}`}>
+            <PhotosIndexContainer>
+              All of my photography featured here was taken on 35 mm film, which has been my preferred medium since I first started photography as a teenager. My subject matter normally covers scenes from my travel and daily life with my friends and family.
+            </PhotosIndexContainer>
+          </Route>
+        </Switch>
       </Content>
     </ContentContainer>
   );
@@ -205,6 +218,17 @@ const PhotosContainer = styled.div`
   }
   @media (min-width: ${breakpointLgMin}px) {
     margin: 0 180px 16px;
+  }
+`;
+const PhotosIndexContainer = styled.div`
+  margin: 0 20px 16px;
+  line-height: 24px;
+
+  @media (min-width: ${breakpointMdMin}px) {
+    margin: 0 180px 16px;
+  }
+  @media (min-width: ${breakpointLgMin}px) {
+    margin: 0 300px 16px;
   }
 `;
 const PhotoContainer = styled.div`

@@ -47,7 +47,7 @@ function Nav() {
           <SidePanelList>
             <li style={{ marginBottom: '24px' }}><StyledNavLink exact to="/">about</StyledNavLink></li>
             <li>
-              photography
+              <StyledNavLink to="/photography">photography</StyledNavLink>
               <SidePanelInnerList>
                 <li><StyledNavLink to="/photography/iceland">iceland</StyledNavLink></li>
                 <li><StyledNavLink to="/photography/japan">japan</StyledNavLink></li>
