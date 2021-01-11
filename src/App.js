@@ -7,7 +7,7 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { useMobileBreakpoint } from './useMobileBreakpoint';
 import { Photography } from './Photography';
 import backgroundXs from './assets/background-xs.jpg';
@@ -34,6 +34,8 @@ function Nav() {
   if (isMobile) {
     return (
       <>
+        <BodyOverflowStyle isSidePanelOpen={isSidePanelOpen} />
+        <Backdrop isSidePanelOpen={isSidePanelOpen} onClick={() => setIsSidePanelOpen(false)} />
         <HamburgerMenu onClick={() => setIsSidePanelOpen(true)} aria-label="Menu" width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 9C9 9 17 9 25 9" stroke="#312725" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M1 1C9 1 17 1 25 1" stroke="#312725" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -74,6 +76,7 @@ function Nav() {
 function App() {
   return (
     <>
+      <GlobalStyle />
       <Nav />
       <Switch>
         <Route path="/photography">
@@ -94,6 +97,19 @@ function App() {
   );
 }
 
+const BodyOverflowStyle = createGlobalStyle`
+  body {
+    overflow-y: ${props => props.isSidePanelOpen ? 'hidden' : 'scroll'};
+  }
+`;
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    color: ${bodyTextColor};
+    overflow-y: scroll;
+  }
+`;
 const Background = styled.div`
   width: 100%;
   height: 100%;
@@ -115,6 +131,17 @@ const Background = styled.div`
     background-image: url(${backgroundLg});
   }
 `;
+const Backdrop = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 999998;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: ${props => props.isSidePanelOpen ? 1 : 0};
+  transition: all 300ms ease-out;
+  visibility: ${props => props.isSidePanelOpen ? 'visible' : 'hidden' };
+`;
 const HamburgerMenu = styled.svg`
   position: absolute;
   z-index: 1;
@@ -131,9 +158,9 @@ const SidePanel = styled.div`
   height: 100%;
   overflow-y: scroll;
   background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   transition: transform 300ms ease-out;
-  transform: ${props => props.open ? 'translate(0, 0)' : 'translate(350px, 0)'};
+  transform: ${props => props.open ? 'translate(0, 0)' : 'translate(320px, 0)'};
 `;
 const Close = styled.svg`
   margin: 32px 20px 48px;
@@ -167,9 +194,6 @@ const NavList = styled.ul`
 const NavListItem = styled.li`
   display: inline-flex;
   margin-right: 42px;
-`;
-const BackgroundImage = styled.img`
-  width: 100%;
 `;
 const Info = styled.div`
   position: absolute;

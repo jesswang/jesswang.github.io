@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import styled from 'styled-components';
 import { useMobileBreakpoint } from './useMobileBreakpoint';
-import { StyledNavLink, breakpointMdMin, breakpointLgMin } from './stylesUtils';
+import { StyledNavLink, breakpointSmMin, breakpointMdMin, breakpointLgMin } from './stylesUtils';
 import icelandImg1 from './assets/iceland/iceland-01.jpg';
 import icelandImg2 from './assets/iceland/iceland-02.jpg';
 import icelandImg3 from './assets/iceland/iceland-03.jpg';
@@ -257,4 +257,9 @@ const Img = styled.img`
 const Caption = styled.p`
   margin-top: 8px;
   text-align: right;
+  font-size: 14px;
+
+  @media (min-width: ${breakpointSmMin}px) {
+    font-size: 16px;
+  }
 `;
