@@ -76,7 +76,6 @@ function Nav() {
 function App() {
   return (
     <>
-      <GlobalStyle />
       <Nav />
       <Switch>
         <Route path="/photography">
@@ -100,14 +99,6 @@ function App() {
 const BodyOverflowStyle = createGlobalStyle`
   body {
     overflow-y: ${props => props.isSidePanelOpen ? 'hidden' : 'scroll'};
-  }
-`;
-const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    color: ${bodyTextColor};
-    overflow-y: scroll;
   }
 `;
 const Background = styled.div`

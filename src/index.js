@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { bodyTextColor } from './stylesUtils';
 
 const CSSReset = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -55,10 +56,18 @@ const CSSReset = createGlobalStyle`
     border-spacing: 0;
   }
 `;
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    color: ${bodyTextColor};
+  }
+`;
 
 ReactDOM.render(
   <React.StrictMode>
     <CSSReset />
+    <GlobalStyle />
     <HashRouter>
       <App />
     </HashRouter>
