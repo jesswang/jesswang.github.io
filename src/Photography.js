@@ -42,7 +42,7 @@ export function Photography() {
     <ContentContainer>
       <Content>
         {!isMobile && (
-          <div>
+          <nav>
             <List>
               <li><StyledNavLink to={`${match.url}/iceland`}>iceland</StyledNavLink></li>
               <li><StyledNavLink to={`${match.url}/japan`}>japan</StyledNavLink></li>
@@ -52,7 +52,7 @@ export function Photography() {
             <List style={{ marginTop: '20px' }}>
               <li><StyledNavLink to={`${match.url}/portraits`}>portraits</StyledNavLink></li>
             </List>
-          </div>
+          </nav>
         )}
         <Switch>
           <Route path={`${match.path}/iceland`}>
@@ -181,7 +181,9 @@ export function Photography() {
           </Route>
           <Route path={`${match.path}`}>
             <PhotosIndexContainer>
-              All of my photography featured here was taken on 35 mm film, which has been my preferred medium since I first started photography as a teenager. My subject matter normally covers scenes from my travel and daily life with my friends and family.
+              <p>
+                All of my photography featured here was taken on 35 mm film, which has been my preferred medium since I first started photography as a teenager. My subject matter normally covers scenes from my travel and daily life with my friends and family.
+              </p>
             </PhotosIndexContainer>
           </Route>
         </Switch>

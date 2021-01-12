@@ -61,6 +61,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     color: ${bodyTextColor};
+    overflow-y: scroll;
   }
 `;
 

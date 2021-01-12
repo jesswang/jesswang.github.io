@@ -33,7 +33,7 @@ function Nav() {
 
   if (isMobile) {
     return (
-      <>
+      <nav>
         <BodyOverflowStyle isSidePanelOpen={isSidePanelOpen} />
         <Backdrop isSidePanelOpen={isSidePanelOpen} onClick={() => setIsSidePanelOpen(false)} />
         <HamburgerMenu onClick={() => setIsSidePanelOpen(true)} aria-label="Menu" width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,22 +60,22 @@ function Nav() {
             </li>
           </SidePanelList>
         </SidePanel>
-      </>
+      </nav>
     );
   }
   return (
-    <FixedNav>
-      <NavList>
+    <nav>
+      <FixedNav>
         <NavListItem><StyledNavLink exact to="/">about</StyledNavLink></NavListItem>
         <NavListItem><StyledNavLink to="/photography">photography</StyledNavLink></NavListItem>
-      </NavList>
-    </FixedNav>
+      </FixedNav>
+    </nav>
   );
 }
 
 function App() {
   return (
-    <>
+    <main>
       <Nav />
       <Switch>
         <Route path="/photography">
@@ -92,13 +92,13 @@ function App() {
           </Background>
         </Route>
       </Switch>
-    </>
+    </main>
   );
 }
 
 const BodyOverflowStyle = createGlobalStyle`
   body {
-    ${props => props.isSidePanelOpen ? 'overflow: hidden' : 'overflow-y: scroll'};
+    ${props => props.isSidePanelOpen ? 'overflow: hidden !important' : 'overflow-y: scroll'};
   }
 `;
 const Background = styled.div`
@@ -178,8 +178,6 @@ const FixedNav = styled.ul`
   left: 50%;
   transform: translateX(-50%);
   list-style-type: none;
-`;
-const NavList = styled.ul`
   margin: 40px 64px;
 `;
 const NavListItem = styled.li`
