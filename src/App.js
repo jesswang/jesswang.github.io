@@ -89,6 +89,9 @@ function App() {
               <Contact><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></Contact>
               <Contact><ContactLink href="https://www.instagram.com/jesswang.photo" target="_blank" rel="noopener noreferrer">Instagram</ContactLink></Contact>
             </Info>
+            <Footer>
+              © {new Date().getFullYear()} Jessica Wang
+            </Footer>
           </Background>
         </Route>
       </Switch>
@@ -207,6 +210,12 @@ const ContactLink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+`;
+const Footer = styled.footer`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
 `;
 
 export default App;

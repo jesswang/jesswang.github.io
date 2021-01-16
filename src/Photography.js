@@ -33,6 +33,7 @@ import portraitImg1 from './assets/portraits/portrait-01.jpg';
 import portraitImg2 from './assets/portraits/portrait-02.jpg';
 import portraitImg3 from './assets/portraits/portrait-03.jpg';
 import portraitImg4 from './assets/portraits/portrait-04.jpg';
+import jwImg from './assets/jw.jpg';
 
 export function Photography() {
   let match = useRouteMatch();
@@ -181,13 +182,21 @@ export function Photography() {
           </Route>
           <Route path={`${match.path}`}>
             <PhotosIndexContainer>
+              <ImgContainerWrapper>
+                <ImgContainer width={1600} height={1061}>
+                  <Img src={jwImg} key={jwImg} alt="portrait of myself" />
+                </ImgContainer>
+              </ImgContainerWrapper>
               <p>
-                All of my photography featured here was taken on 35 mm film, which has been my preferred medium since I first started photography as a teenager. My subject matter normally covers scenes from my travel and daily life with my friends and family.
+                When I first started photography as a teenager, I gravitated toward 35 mm film, and it's still my preferred medium today. My subject matter normally covers scenes from my travel and daily life with my friends and family.
               </p>
             </PhotosIndexContainer>
           </Route>
         </Switch>
       </Content>
+      {!useRouteMatch({ path: '/photography', exact: true }) && (
+        <Footer>© {new Date().getFullYear()} Jessica Wang</Footer>
+      )}
     </ContentContainer>
   );
 }
@@ -203,7 +212,7 @@ const ContentContainer = styled.div`
 const List = styled.ul`
   list-style-type: none;
   margin-left: 64px;
-  line-height: 22px;
+  line-height: 24px;
 `;
 const Content = styled.div`
   display: flex;
@@ -223,14 +232,14 @@ const PhotosContainer = styled.div`
   }
 `;
 const PhotosIndexContainer = styled.div`
-  margin: 0 20px 16px;
+  margin: 0 20px 20px;
   line-height: 24px;
 
   @media (min-width: ${breakpointMdMin}px) {
-    margin: 0 180px 16px;
+    margin: 0 180px 64px;
   }
   @media (min-width: ${breakpointLgMin}px) {
-    margin: 0 300px 16px;
+    margin: 0 300px 64px;
   }
 `;
 const PhotoContainer = styled.div`
@@ -246,6 +255,14 @@ const PortraitPhotoContainer = styled.div`
 
   @media (min-width: ${breakpointMdMin}px) {
     margin: 0 auto 48px;
+  }
+`;
+const ImgContainerWrapper = styled.div`
+  margin: 0 auto 20px;
+  max-width: none;
+
+  @media (min-width: ${breakpointSmMin}px) {
+    max-width: 600px;
   }
 `;
 const ImgContainer = styled.div`
@@ -264,4 +281,9 @@ const Caption = styled.p`
   @media (min-width: ${breakpointSmMin}px) {
     font-size: 16px;
   }
+`;
+const Footer = styled.footer`
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 20px;
 `;
