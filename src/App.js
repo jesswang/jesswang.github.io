@@ -64,12 +64,12 @@ function Nav() {
     );
   }
   return (
-    <nav>
+    <NavContainer>
       <FixedNav>
         <NavListItem><StyledNavLink exact to="/">about</StyledNavLink></NavListItem>
         <NavListItem><StyledNavLink to="/photography">photography</StyledNavLink></NavListItem>
       </FixedNav>
-    </nav>
+    </NavContainer>
   );
 }
 
@@ -172,14 +172,15 @@ const SidePanelInnerList = styled.ul`
     margin-bottom: 8px;
   }
 `;
+const NavContainer = styled.nav`
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+`;
 const FixedNav = styled.ul`
   position: absolute;
   top: 0;
   z-index: 1;
-  max-width: 1600px;
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
   list-style-type: none;
   margin: 40px 64px;
 `;
