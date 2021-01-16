@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.445bfe0f.chunk.js",
-    "main.js.map": "/static/js/main.445bfe0f.chunk.js.map",
+    "main.js": "/static/js/main.aaa45545.chunk.js",
+    "main.js.map": "/static/js/main.aaa45545.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.617c3922.js",
     "runtime-main.js.map": "/static/js/runtime-main.617c3922.js.map",
     "static/js/2.5db886d5.chunk.js": "/static/js/2.5db886d5.chunk.js",
@@ -24,6 +24,7 @@
     "static/media/japan-03.4c35bfa3.jpg": "/static/media/japan-03.4c35bfa3.jpg",
     "static/media/japan-04.38c70207.jpg": "/static/media/japan-04.38c70207.jpg",
     "static/media/japan-05.fe8d8b80.jpg": "/static/media/japan-05.fe8d8b80.jpg",
+    "static/media/jw.ab62d83c.jpg": "/static/media/jw.ab62d83c.jpg",
     "static/media/norway-01.67669b85.jpg": "/static/media/norway-01.67669b85.jpg",
     "static/media/norway-02.e4228587.jpg": "/static/media/norway-02.e4228587.jpg",
     "static/media/norway-03.087e224d.jpg": "/static/media/norway-03.087e224d.jpg",
@@ -45,6 +46,6 @@
   "entrypoints": [
     "static/js/runtime-main.617c3922.js",
     "static/js/2.5db886d5.chunk.js",
-    "static/js/main.445bfe0f.chunk.js"
+    "static/js/main.aaa45545.chunk.js"
   ]
 }
