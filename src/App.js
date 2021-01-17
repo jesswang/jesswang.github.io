@@ -12,7 +12,6 @@ import { useMobileBreakpoint } from './useMobileBreakpoint';
 import { Photography } from './Photography';
 import backgroundXs from './assets/background-xs.jpg';
 import backgroundSm from './assets/background-sm.jpg';
-import backgroundMd from './assets/background-md.jpg';
 import backgroundLg from './assets/background-lg.jpg';
 import { 
   breakpointXsMin,
@@ -114,14 +113,12 @@ const Background = styled.div`
   transform: translateX(-50%);
   max-width: 1600px;
   background-image: url(${backgroundXs});
+  background-position: bottom left;
   background-repeat: no-repeat;
   background-size: cover;
 
   @media (min-width: ${breakpointXsMin}px) {
     background-image: url(${backgroundSm});
-  }
-  @media (min-width: ${breakpointSmMin}px) {
-    background-image: url(${backgroundMd});
   }
   @media (min-width: ${breakpointMdMin}px) {
     background-image: url(${backgroundLg});
