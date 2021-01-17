@@ -188,7 +188,7 @@ export function Photography() {
                 </ImgContainer>
               </ImgContainerWrapper>
               <p>
-                When I first started photography as a teenager, I gravitated toward 35 mm film, and it's still my preferred medium today. My subject matter normally covers scenes from my travel and daily life with my friends and family.
+                I gravitated toward 35 mm film when I first started photography as a teenager, and it's still my preferred medium today. My subject matter normally covers scenes from my travel and daily life with my friends and family.
               </p>
             </PhotosIndexContainer>
           </Route>
