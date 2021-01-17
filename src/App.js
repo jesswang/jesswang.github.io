@@ -100,8 +100,10 @@ function App() {
 }
 
 const BodyOverflowStyle = createGlobalStyle`
-  body {
-    ${props => props.isSidePanelOpen ? 'overflow: hidden !important' : 'overflow-y: scroll'};
+  ${props => props.isSidePanelOpen &&
+    `body {
+      overflow: hidden !important;
+    }`
   }
 `;
 const Background = styled.div`
