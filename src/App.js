@@ -15,7 +15,6 @@ import backgroundSm from './assets/background-sm.jpg';
 import backgroundLg from './assets/background-lg.jpg';
 import { 
   breakpointXsMin,
-  breakpointSmMin,
   breakpointMdMin,
   bodyTextColor,
   StyledNavLink,
