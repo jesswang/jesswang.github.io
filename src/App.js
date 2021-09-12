@@ -80,17 +80,20 @@ function App() {
           <Photography />
         </Route>
         <Route path="/">
-          <Background>
+          <Background />
+          <Content>
             <Info>
               <InfoText>I am Jessica Wang, a software engineer and photographer.</InfoText>
-              <Contact><ContactLink href="mailto:jssxwang@gmail.com" target="_blank" rel="noopener noreferrer">email</ContactLink></Contact>
-              <Contact><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></Contact>
-              <Contact><ContactLink href="https://www.instagram.com/jesswang.photo" target="_blank" rel="noopener noreferrer">Instagram</ContactLink></Contact>
+              <ul>
+                <li><ContactLink href="mailto:jssxwang@gmail.com" target="_blank" rel="noopener noreferrer">email</ContactLink></li>
+                <li><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></li>
+                <li><ContactLink href="https://www.instagram.com/jesswang.photo" target="_blank" rel="noopener noreferrer">Instagram</ContactLink></li>
+              </ul>
             </Info>
             <Footer>
               © {new Date().getFullYear()} Jessica Wang
             </Footer>
-          </Background>
+          </Content>
         </Route>
       </Switch>
     </main>
@@ -110,7 +113,6 @@ const Background = styled.div`
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 1600px;
   background-image: url(${backgroundXs});
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -122,6 +124,18 @@ const Background = styled.div`
   @media (min-width: ${breakpointMdMin}px) {
     background-image: url(${backgroundLg});
   }
+`;
+const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
 `;
 const Backdrop = styled.div`
   position: fixed;
@@ -187,8 +201,6 @@ const NavListItem = styled.li`
   margin-right: 42px;
 `;
 const Info = styled.div`
-  position: absolute;
-  bottom: 0;
   margin: 0 20px 32px;
   
   @media (min-width: ${breakpointMdMin}px) {
@@ -199,22 +211,19 @@ const InfoText = styled.p`
   margin-bottom: 24px;
   line-height: 18px;
 `;
-const Contact = styled.div`
-  line-height: 22px;
-`;
 const ContactLink = styled.a`
   color: ${bodyTextColor};
   text-decoration: none;
+  line-height: 22px;
 
   &:hover {
     text-decoration: underline;
   }
 `;
 const Footer = styled.footer`
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  margin: 10px;
   font-size: 12px;
+  flex-shrink: 0;
 `;
 
 export default App;
