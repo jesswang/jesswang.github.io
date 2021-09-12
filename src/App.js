@@ -128,7 +128,7 @@ const Background = styled.div`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   position: absolute;
   bottom: 0;
   left: 0;

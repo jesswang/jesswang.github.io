@@ -61,10 +61,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     color: ${bodyTextColor};
-    
-    @media (min-width: ${breakpointSmMin}px) {
-      margin-left: calc(100vw - 100%);
-    }
+
+    // prevent scrollbar from shifting content
+    width: 100vw;
+    overflow-x: hidden;
   }
 `;
 
