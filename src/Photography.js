@@ -143,8 +143,8 @@ export function Photography() {
                 <Caption>Death Valley, March 2016</Caption>
               </PhotoContainer>
               <PhotoContainer>
-                <ImgContainer width={1600} height={1081}><Img src={usImg3} key={usImg3} alt="Street art in Astoria, Queens" /></ImgContainer>
-                <Caption>Astoria, June 2016</Caption>
+                <ImgContainer width={1600} height={1061}><Img src={usImg3} key={usImg3} alt="Woman walking towards basketball hoop" /></ImgContainer>
+                <Caption>Connecticut, June 2021</Caption>
               </PhotoContainer>
               <PhotoContainer>
                 <ImgContainer width={1600} height={1061}><Img src={usImg4} key={usImg4} alt="Franconia Ridge Loop" /></ImgContainer>
