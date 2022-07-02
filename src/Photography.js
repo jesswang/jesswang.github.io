@@ -175,9 +175,9 @@ export function Photography() {
               <PortraitPhotoContainer>
                 <ImgContainer width={1061} height={1600}><Img src={portraitImg3} key={portraitImg3} alt="" /></ImgContainer>
               </PortraitPhotoContainer>
-              <PortraitPhotoContainer>
-                <ImgContainer width={1061} height={1600}><Img src={portraitImg4} key={portraitImg4} alt="" /></ImgContainer>
-              </PortraitPhotoContainer>
+              <PhotoContainer>
+                <ImgContainer width={1600} height={1061}><Img src={portraitImg4} key={portraitImg4} alt="" /></ImgContainer>
+              </PhotoContainer>
             </PhotosContainer>
           </Route>
           <Route path={`${match.path}`}>
