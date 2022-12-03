@@ -83,7 +83,7 @@ function App() {
           <Background />
           <Content>
             <Info>
-              <InfoText>I'm Jessica Wang, a software engineer and photographer.</InfoText>
+              <InfoText>I'm Jessica, a software engineer who loves taking pictures.</InfoText>
               <ul>
                 <li><ContactLink href="mailto:jssxwang@gmail.com" target="_blank" rel="noopener noreferrer">email</ContactLink></li>
                 <li><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></li>
