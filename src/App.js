@@ -48,13 +48,10 @@ function Nav() {
             <li style={{ marginBottom: '24px' }}><StyledNavLink exact to="/">about</StyledNavLink></li>
             <li>
               <StyledNavLink to="/photography">photography</StyledNavLink>
-              <SidePanelInnerList>
-                <li><StyledNavLink to="/photography/iceland">iceland</StyledNavLink></li>
-                <li><StyledNavLink to="/photography/japan">japan</StyledNavLink></li>
-                <li><StyledNavLink to="/photography/norway">norway</StyledNavLink></li>
+              {/* <SidePanelInnerList>
                 <li><StyledNavLink to="/photography/us">u.s.</StyledNavLink></li>
                 <li><StyledNavLink to="/photography/portraits">portraits</StyledNavLink></li>
-              </SidePanelInnerList>
+              </SidePanelInnerList> */}
             </li>
           </SidePanelList>
         </SidePanel>
@@ -87,7 +84,6 @@ function App() {
               <ul>
                 <li><ContactLink href="mailto:jssxwang@gmail.com" target="_blank" rel="noopener noreferrer">email</ContactLink></li>
                 <li><ContactLink href="https://www.linkedin.com/in/jessicawang3" target="_blank" rel="noopener noreferrer">LinkedIn</ContactLink></li>
-                <li><ContactLink href="https://www.instagram.com/jesswang.photo" target="_blank" rel="noopener noreferrer">Instagram</ContactLink></li>
               </ul>
             </Info>
             <Footer>
