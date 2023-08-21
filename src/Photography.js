@@ -51,9 +51,7 @@ export function Photography() {
           </Route>
         </Switch>
       </Content>
-      {!useRouteMatch({ path: '/photography', exact: true }) && (
-        <Footer>© {new Date().getFullYear()} Jessica Wang</Footer>
-      )}
+      <Footer>© {new Date().getFullYear()} Jessica Wang</Footer>
     </ContentContainer>
   );
 }
